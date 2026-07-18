@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b5ixw66oaedki"]
+
+[ext_resource type="Texture2D" uid="uid://bd4rrqj72amnx" path="res://pistol/projectile.png" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://cfjvwhypwf5h5" path="res://bullet.gd" id="1_v8qja"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7yu3s"]
+radius = 18.0
+
+[node name="Bullet" type="Area2D" unique_id=801499595]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_v8qja")
+
+[node name="Projectile" type="Sprite2D" parent="." unique_id=930023842]
+position = Vector2(-11, 0)
+texture = ExtResource("1_v7oki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=542739274]
+shape = SubResource("CircleShape2D_7yu3s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
