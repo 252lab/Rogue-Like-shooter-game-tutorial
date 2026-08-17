@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://b3u84076due2"]
+
+[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://dususlr2yr63q" path="res://game.gd" id="1_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://c0gpy0pye4jr6" path="res://tree.tscn" id="2_e2o6t"]
+
+[sub_resource type="Curve2D" id="Curve2D_feb5d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -131, -262, 0, 0, 0, 0, 2155, -263, 0, 0, 0, 0, 2154, 1230, 0, 0, 0, 0, -127, 1226, 0, 0, 0, 0, -129, -260, 0, 0, 0, 0, -131, -262)
+}
+point_count = 6
+
+[node name="Game" type="Node2D" unique_id=1864000238]
+y_sort_enabled = true
+script = ExtResource("1_fc0e3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1361227145]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1942105127]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="player" parent="." unique_id=542400338 instance=ExtResource("1_80nbo")]
+position = Vector2(969, 538)
+
+[node name="Path2D" type="Path2D" parent="player" unique_id=969451111]
+position = Vector2(-969, -538)
+curve = SubResource("Curve2D_feb5d")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="player/Path2D" unique_id=1322735958]
+unique_name_in_owner = true
+position = Vector2(-131, -262)
+rotation = -0.0004374453
+
+[node name="Tree" parent="." unique_id=406559060 instance=ExtResource("2_e2o6t")]
+position = Vector2(177, 884)
+
+[node name="Tree2" parent="." unique_id=1219628117 instance=ExtResource("2_e2o6t")]
+position = Vector2(627, 577)
+
+[node name="Tree3" parent="." unique_id=1503617631 instance=ExtResource("2_e2o6t")]
+position = Vector2(338, 292)
+
+[node name="Tree4" parent="." unique_id=1242022202 instance=ExtResource("2_e2o6t")]
+position = Vector2(1702, 205)
+
+[node name="Tree5" parent="." unique_id=345373758 instance=ExtResource("2_e2o6t")]
+position = Vector2(962, 53)
+
+[node name="Tree6" parent="." unique_id=1218594449 instance=ExtResource("2_e2o6t")]
+position = Vector2(1635, 898)
+
+[node name="Tree7" parent="." unique_id=1207985838 instance=ExtResource("2_e2o6t")]
+position = Vector2(1102, 937)
+
+[node name="Tree8" parent="." unique_id=1615121420 instance=ExtResource("2_e2o6t")]
+position = Vector2(1373, 517)
+
+[node name="Tree9" parent="." unique_id=239857334 instance=ExtResource("2_e2o6t")]
+position = Vector2(97, 65)
+
+[node name="Tree10" parent="." unique_id=2002926095 instance=ExtResource("2_e2o6t")]
+position = Vector2(1911, 687)
+
+[node name="Tree11" parent="." unique_id=1855106774 instance=ExtResource("2_e2o6t")]
+position = Vector2(7, 487)
+
+[node name="Tree12" parent="." unique_id=208882633 instance=ExtResource("2_e2o6t")]
+position = Vector2(590, 1055)
+
+[node name="Tree13" parent="." unique_id=554672319 instance=ExtResource("2_e2o6t")]
+position = Vector2(126, 946)
+
+[node name="Tree14" parent="." unique_id=926247963 instance=ExtResource("2_e2o6t")]
+position = Vector2(196, 965)
+
+[node name="Tree15" parent="." unique_id=67710096 instance=ExtResource("2_e2o6t")]
+position = Vector2(872, 24)
+
+[node name="Tree16" parent="." unique_id=1890830937 instance=ExtResource("2_e2o6t")]
+position = Vector2(1718, 839)
+
+[node name="Tree17" parent="." unique_id=73267653 instance=ExtResource("2_e2o6t")]
+position = Vector2(698, 585)
+
+[node name="Tree18" parent="." unique_id=790744813 instance=ExtResource("2_e2o6t")]
+position = Vector2(1286, 419)
+
+[node name="Tree19" parent="." unique_id=1808354060 instance=ExtResource("2_e2o6t")]
+position = Vector2(1356, 375)
+
+[node name="Tree20" parent="." unique_id=1667616865 instance=ExtResource("2_e2o6t")]
+position = Vector2(1276, 105)
+
+[node name="Tree21" parent="." unique_id=640475704 instance=ExtResource("2_e2o6t")]
+position = Vector2(1033, 662)
+
+[node name="Tree22" parent="." unique_id=806736647 instance=ExtResource("2_e2o6t")]
+position = Vector2(702, 234)
+
+[node name="Tree23" parent="." unique_id=212691628 instance=ExtResource("2_e2o6t")]
+position = Vector2(539, 918)
+
+[node name="Timer" type="Timer" parent="." unique_id=824658732]
+wait_time = 0.75
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=1220047290]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=484905087]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5176471)
+
+[node name="Button" type="Button" parent="GameOver/ColorRect" unique_id=1305108748]
+process_mode = 3
+light_mask = 4
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = 39.0
+offset_right = 215.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+action_mode = 0
+keep_pressed_outside = true
+text = "Restart"
+
+[node name="Label" type="Label" parent="GameOver/ColorRect" unique_id=970716903]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = -239.0
+offset_right = 342.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 120
+text = "Game Over!"
+
+[node name="ScoreLabel" type="Label" parent="GameOver/ColorRect" unique_id=452159010]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -85.0
+offset_right = 60.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "placeholder"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="GameOver/ColorRect/Button" to="." method="_on_button_pressed"]
